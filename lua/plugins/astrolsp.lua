@@ -24,6 +24,7 @@ return {
         enabled = true, -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
           -- "go",
+          "ts",
         },
         ignore_filetypes = { -- disable format on save for specified filetypes
           -- "python",
@@ -48,9 +49,7 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       spyglassmc_language_server = {
-        root_dir = function()
-          return vim.loop.cwd()
-        end
+        root_dir = function() return vim.loop.cwd() end,
       },
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
     },

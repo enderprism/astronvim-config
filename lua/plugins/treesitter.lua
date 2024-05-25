@@ -1,4 +1,4 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+-- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- Customize Treesitter
 
@@ -12,9 +12,14 @@ return {
       "vim",
       -- add more arguments for adding more treesitter parsers
     })
+
     opts.indent = {
       enable = true,
-      disable = { "gdscript" }
+      disable = { "gdscript", "jmc", "javascript" },
     }
+
+    vim.treesitter.language.register("javascript", "jmc")
+    vim.treesitter.language.register("javascript", "mc")
+    vim.treesitter.language.register("python", "bolt")
   end,
 }

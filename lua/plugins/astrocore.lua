@@ -32,13 +32,16 @@ return {
         spell = false, -- sets vim.opt.spell
         signcolumn = "auto", -- sets vim.opt.signcolumn to auto
         wrap = false, -- sets vim.opt.wrap
-        guifont = "JetBrainsMono NF:h12",
+        guifont = "JetBrainsMono NF:h13:w0:#e-subpixelantialias",
+        scrolloff = 10,
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
         -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
         -- This can be found in the `lua/lazy_setup.lua` file
         neovide_hide_mouse_when_typing = true,
+        neovide_scroll_animation_length = 1.2,
+        neovide_cursor_animation_length = 0.4,
       },
     },
     -- Mappings can be configured through AstroCore as well.
@@ -71,10 +74,11 @@ return {
         -- this is useful for naming menus
         ["<Leader>b"] = { desc = "Buffers" },
         -- quick save
-        ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+        ["<C-s>"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
       },
       i = {
-        ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+        ["<C-v>"] = { "<cmd> :normal! P <CR>", desc = "Paste" },
+        ["<C-s>"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
       },
       v = {
         ["<"] = { "<gv" },
