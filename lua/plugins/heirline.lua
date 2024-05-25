@@ -69,7 +69,6 @@ return {
             separator = "left",
             -- set the color of the surrounding based on the current mode using astronvim.utils.status module
             color = function() return { main = status.hl.mode_bg(), right = status.hl.mode_bg() } end,
-            -- color = function() return { main = status.hl.mode_bg(), right = "blank_bg" } end,
           },
         },
         -- we want an empty space here so we can use the component builder to make a new section with just an empty string
@@ -80,13 +79,12 @@ return {
           surround = {
             separator = "left",
             color = function() return { main = status.hl.mode_bg(), right = "file_info_bg" } end,
-            -- color = { main = status.hl.mode_bg(), right = "file_info_bg" },
           },
         },
         -- add a section for the currently opened file information
         status.component.file_info {
           -- enable the file_icon and disable the highlighting based on filetype
-          filename = { fallback = "Empty" },
+          filename = { fallback = "  Empty" },
           -- disable some of the info
           filetype = false,
           file_read_only = false,
@@ -108,12 +106,13 @@ return {
         -- fill the rest of the statusline
         -- the elements after this will appear in the middle of the statusline
         status.component.fill(),
+        -- add a component with command info. e.g. whether you're recording macros or not
+        status.component.cmd_info(),
         -- add a component to display if the LSP is loading, disable showing running client names, and use no separator
         status.component.lsp {
           lsp_client_names = false,
           surround = { separator = "none", color = "bg" },
         },
-        status.component.cmd_info(),
         -- fill the rest of the statusline
         -- the elements after this will appear on the right of the statusline
         status.component.fill(),
