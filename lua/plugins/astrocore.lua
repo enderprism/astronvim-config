@@ -16,6 +16,28 @@ return {
   "AstroNvim/astrocore",
   ---@type AstroCoreOpts
   opts = {
+    rooter = {
+      -- list of detectors in order of prevalence, elements can be:
+      --   "lsp" : lsp detection
+      --   string[] : a list of directory patterns to look for
+      --   fun(bufnr: integer): string|string[] : a function that takes a buffer number and outputs detected roots
+      detector = {
+        "lsp", -- highest priority is getting workspace from running language servers
+        { ".git", "_darcs", ".hg", ".bzr", ".svn" }, -- next check for a version controlled parent directory
+        { "lua", "MakeFile", "package.json", "pyproject.toml", "xmake.lua" }, -- lastly check for known project root files
+      },
+      -- ignore things from root detection
+      ignore = {
+        servers = {"clangd"}, -- list of language server names to ignore (Ex. { "efm" })
+        dirs = {}, -- list of directory patterns (Ex. { "~/.cargo/*" })
+      },
+      -- automatically update working directory (update manually with `:AstroRoot`)
+      autochdir = true,
+      -- scope of working directory to change ("global"|"tab"|"win")
+      scope = "global",
+      -- show notification on every working directory change
+      notify = false,
+    },
     -- Configure core features of AstroNvim
     features = {
       large_buf = { size = 1024 * 500, lines = 10000 }, -- set global limits for large files for disabling features like treesitter
@@ -33,12 +55,12 @@ return {
     -- vim options can be configured here
     options = {
       opt = { -- vim.opt.<key>
-        relativenumber = true, -- sets vim.opt.relativenumber
+        relativenumber = false, -- sets vim.opt.relativenumber
         number = true, -- sets vim.opt.number
         spell = false, -- sets vim.opt.spell
         signcolumn = "auto", -- sets vim.opt.signcolumn to auto
         wrap = false, -- sets vim.opt.wrap
-        guifont = "JetBrainsMono NF:h13:w0:#e-subpixelantialias",
+        guifont = "JetBrainsMono NF,Noto_Color_Emoji:h13:w0:#e-subpixelantialias",
         scrolloff = 10,
       },
       g = { -- vim.g.<key>
@@ -46,8 +68,8 @@ return {
         -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
         -- This can be found in the `lua/lazy_setup.lua` file
         neovide_hide_mouse_when_typing = true,
-        neovide_scroll_animation_length = 1.2,
-        neovide_cursor_animation_length = 0.4,
+        -- neovide_scroll_animation_length = 1.2,
+        -- neovide_cursor_animation_length = 0.4,
       },
     },
     -- Mappings can be configured through AstroCore as well.

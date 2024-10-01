@@ -1,3 +1,5 @@
+-- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+
 return {
   {
     "AstroNvim/astroui",
@@ -35,6 +37,9 @@ return {
           hl.nav_icon_bg = get_hlgroup("String").fg
           hl.nav_fg = hl.nav_icon_bg
           hl.folder_icon_bg = get_hlgroup("Error").fg
+          hl.tabline_bg = get_hlgroup("StatusLine").bg
+          hl.buffer_bg = hl.tabline_bg
+          hl.tab_bg = hl.tabline_bg
           return hl
         end,
         attributes = {

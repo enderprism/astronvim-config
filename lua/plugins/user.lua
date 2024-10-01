@@ -5,12 +5,12 @@ return {
   {
     "catppuccin",
     ---@type CatppuccinOptions
-    opts = { term_colors = true },
+    opts = { term_colors = true, },
   },
-  {
-    "folke/noice.nvim",
-    opts = { lsp = { signature = { enabled = false } } }
-  },
+  -- {
+  --   "folke/noice.nvim",
+  --   opts = { lsp = { signature = { enabled = false } } }
+  -- },
   {
     "epwalsh/obsidian.nvim",
     -- the obsidian vault in this default config  ~/obsidian-vault
@@ -30,5 +30,12 @@ return {
         symbol = require("astrocore").plugin_opts("indent-blankline.nvim").context_char or char,
       }
     end,
+  },
+  {
+    "Mythos-404/xmake.nvim",
+    lazy = true,
+    event = "BufReadPost xmake.lua",
+    config = true,
+    dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
   },
 }

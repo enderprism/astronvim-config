@@ -4,7 +4,7 @@ return {
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.colorscheme.catppuccin" },
   -- { import = "astrocommunity.recipes.heirline-nvchad-statusline" },
-  { import = "astrocommunity.completion.codeium-vim" },
+  -- { import = "astrocommunity.completion.codeium-vim" },
   { import = "astrocommunity.completion.cmp-cmdline" },
   { import = "astrocommunity.pack.go" },
   { import = "astrocommunity.pack.typescript" },
@@ -19,6 +19,7 @@ return {
   { import = "astrocommunity.pack.toml" },
   { import = "astrocommunity.markdown-and-latex.peek-nvim" },
   { import = "astrocommunity.fuzzy-finder.telescope-zoxide" },
+  { import = "astrocommunity.file-explorer.telescope-file-browser-nvim" },
   { import = "astrocommunity.git.git-blame-nvim" },
   { import = "astrocommunity.indent.indent-blankline-nvim" },
   -- { import = "astrocommunity.indent.mini-indentscope" },
@@ -29,7 +30,6 @@ return {
   { import = "astrocommunity.media.presence-nvim" },
   { import = "astrocommunity.motion.flash-nvim" },
   -- { import = "astrocommunity.motion.tabout-nvim" },
-  { import = "astrocommunity.project.project-nvim" },
   -- { import = "astrocommunity.scrolling.nvim-scrollbar" },
   { import = "astrocommunity.editing-support.nvim-treesitter-endwise" },
   -- { import = "astrocommunity.workflow.hardtime-nvim" },
@@ -37,5 +37,7 @@ return {
   -- { import = "astrocommunity.scroling.satellite-nvim" },
   -- { import = "astrocommunity.recipes.vscode" },
   -- { import = "astrocommunity.recipes.vscode-icons" },
+  { import = "astrocommunity.recipes.neovide" },
+  { import = "astrocommunity.diagnostics.trouble-nvim" },
   -- import/override with your plugins folder
 }
