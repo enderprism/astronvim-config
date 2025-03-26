@@ -60,7 +60,7 @@ return {
         spell = false, -- sets vim.opt.spell
         signcolumn = "auto", -- sets vim.opt.signcolumn to auto
         wrap = false, -- sets vim.opt.wrap
-        guifont = "JetBrainsMono NF,Noto_Color_Emoji:h13:w0:#e-subpixelantialias",
+        guifont = "JetBrainsMono NF,Noto_Color_Emoji:h12.5",
         scrolloff = 10,
       },
       g = { -- vim.g.<key>
@@ -68,6 +68,8 @@ return {
         -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
         -- This can be found in the `lua/lazy_setup.lua` file
         neovide_hide_mouse_when_typing = true,
+        neovide_normal_opacity = 0.9,
+        neovide_floating_corner_radius = 0.25,
         -- neovide_scroll_animation_length = 1.2,
         -- neovide_cursor_animation_length = 0.4,
       },

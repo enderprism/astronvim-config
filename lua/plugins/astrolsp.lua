@@ -23,6 +23,7 @@ return {
           -- "go",
           "ts",
           "cpp",
+          "rust",
         },
         ignore_filetypes = { -- disable format on save for specified filetypes
           -- "python",
@@ -39,9 +40,10 @@ return {
     },
     -- enable servers that you already have installed without mason
     servers = {
-      "pyright",
+      -- "pyright",
       "spyglassmc_language_server",
       "gdscript",
+      "tinymist",
     },
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
