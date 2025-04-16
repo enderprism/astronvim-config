@@ -1,19 +1,6 @@
 -- This will run last in the setup process and is a good place to configure
--- things like custom filetypes. This just pure lua so anything that doesn't
+-- things like custom filetypes. This is just pure lua so anything that doesn't
 -- fit in the normal config locations above can go here
-
--- Set up custom filetypes
--- vim.filetype.add {
---   extension = {
---     foo = "fooscript",
---   },
---   filename = {
---     ["Foofile"] = "fooscript",
---   },
---   pattern = {
---     ["~/%.config/foo/.*"] = "fooscript",
---   },
--- }
 
 vim.filetype.add {
   extension = {
@@ -34,22 +21,3 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
   desc = "Set tabs to 4 chars in Go and GDScript files",
 })
-
--- vim.api.nvim_create_autocmd("BufWritePre", {
---   group = vim.api.nvim_create_augroup("TS_add_missing_imports", { clear = true }),
---   desc = "TS_add_missing_imports",
---   pattern = { "*.ts", "*.tsx", "*.js", "*.jsx" },
---   callback = function()
---     vim.cmd [[TSToolsAddMissingImports]]
---     vim.cmd "write"
---   end,
--- })
-
--- -- put this after lazy setup
--- dofile(vim.g.base46_cache .. "defaults")
--- dofile(vim.g.base46_cache .. "statusline")
---
--- -- To load all integrations at once
--- for _, v in ipairs(vim.fn.readdir(vim.g.base46_cache)) do
---   dofile(vim.g.base46_cache .. v)
--- end
