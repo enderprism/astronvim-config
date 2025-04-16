@@ -22,7 +22,6 @@ return {
   { import = "astrocommunity.pack.toml" },
   { import = "astrocommunity.utility.noice-nvim" },
   { import = "astrocommunity.recipes.neovide" },
-  { import = "astrocommunity.recipes.heirline-nvchad-statusline" },
   { import = "astrocommunity.media.cord-nvim" },
   { import = "astrocommunity.motion.flash-nvim" },
   -- import/override with your plugins folder
