@@ -20,6 +20,7 @@ return {
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.json" },
   { import = "astrocommunity.pack.toml" },
+  { import = "astrocommunity.pack.typescript-deno" },
   { import = "astrocommunity.utility.noice-nvim" },
   { import = "astrocommunity.recipes.neovide" },
   { import = "astrocommunity.media.cord-nvim" },
